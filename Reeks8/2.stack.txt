@@ -1,0 +1,56 @@
+R0  10d
+
+Main:
+-- 
+10d     < SP
+07h
+--
+
+Fac:
+-- 
+PC1     < SP
+PC2
+10d     
+07h
+--
+
+Fac:
+-- 
+10d     < SP 
+PC1    
+PC2
+10d     < R0
+07h
+--
+
+A = 10d
+
+jnz rec: A is niet nul dus we nemen de sprong
+
+A = 9d
+
+Fac:
+-- 
+9d      < SP 
+10d     
+PC1    
+PC2
+10d     < R0
+07h
+--
+
+call fac
+
+Fac:
+-- 
+10d     
+PC1
+PC2     < SP 
+9d      
+10d     
+PC1    
+PC2
+10d     < R0
+07h
+--
+
