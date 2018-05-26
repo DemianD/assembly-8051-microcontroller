@@ -27,10 +27,23 @@ Eerste bytes van het interne geheugen komen overeen met de registers:
 
 Schrijf nooit waarden naar de stapel, enkel directe adressen.
 
-**pop:**
+```
+# push #20h > kan niet
+# push @R1 > kan niet
 
-Bij een pop worden 2 bytes van de stapel gehaalt, in plaats van 1.
-Dit komt omdat je `2^64` bytes programmegeheugen hebt.
+# push R0 > kan niet
+push 00H #
+
+# push A > kan niet
+push Acc
+
+push B
+```
+
+**call:**
+
+- Bij een call worden 2 bytes op de stapel geplaatst.
+- Bij een ret worden 2 bytes van de stapel gehaalt.
 
 ## Stack Pointer
 
@@ -40,7 +53,7 @@ Om toch bewerkingen te kunnen doen met de Stack kan je gebruik maken van een hul
 
 ```asm
 # Hulppointer
-mov R0,SP
+mov R0, SP
 ```
 
 Bij het opstarten van de controller bevat het register SP de waarde 07H, wat betekent dat de eerste vrij plaats (08H) van de stack samenvalt met register R0 van registerbank 1.
