@@ -79,13 +79,15 @@ export const ret = () => {
   stack.pop();
 };
 
-export const log = (prefix = "") => {
+export const printStack = (prefix = "") => {
   if(stack.length !== 0) {
     console.log(prefix, stack.reduce((acc, el) => acc = `${acc}     ${el}`));
   }
   else {
     console.log(prefix, "stack empty");
   }
+}
+
+export const printMemory = (prefix = "") => {
   console.log(prefix, memory);
-  console.log("-------------");
-};
+}
