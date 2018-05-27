@@ -1,6 +1,8 @@
 ; Schrijf een programma dat op P1.7 een blokgolf genereert met een frequentie van 7KHz en op
 ; P1.6 een blokgolf met een frequentie van 500Hz.
 
+; Note: Eerst omzetten naar seconden, dan pas delen door 2.
+
 ; 7KHz      = 7000 Hz  
 ; 7000 Hz   = 1/7000 seconden = 0,000142857
 ; Omschakelen om de 0,000071429 seconden

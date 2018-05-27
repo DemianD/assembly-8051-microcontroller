@@ -40,7 +40,7 @@ main:
     ; Poorten configureren.
     ; Wij willen hebben als we linksboven klikken. Zie Reeks 2 voor toetsenbord.
     ; Dit houdt dan in dat P0.4 als output moet zijn, en P0.0 als invoer.
-    mov P0MDOUT, #010000b ; P0.4 als een invoerpoin,
+    mov P0MDOUT, #010000b ; P0.4 als een uitvoerpin,
 
     mov P1MDOUT, #0FFh    ; P1.6 als uitvoer, rest zijn dont-cares. 
 
@@ -70,7 +70,7 @@ lus:
 
     ; Dit weet ik nog niet zo goed.
     ; Jump if bit is not set
-	jnb P0.0, ISR
+	jnb P0.0, ISR_INT1
 	
     ; Bij 10 tellen pas het lichtje doen branden.
 	inc R2
