@@ -34,7 +34,7 @@ main:
 
     ; P0.0 = interrupt lijn 0
     ; P0.1 = interrupt lijn 1
-    mov XBR1, #10100
+    mov XBR1, #10100b
 
     ; Interrupts enabelen voor deze interrupt lijnen
     mov P0MDOUT, #10h        ; Bij P0 dient enkel poort 4 aan te staan als uitvoer voor het toestenbord.
