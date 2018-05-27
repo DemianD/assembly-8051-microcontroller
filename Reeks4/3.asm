@@ -38,7 +38,7 @@ main:
     mov XBR1, #00000111b        
 
     ; Interrupts enabelen voor deze interrupt lijnen
-    mov P0MDOUT, #00010000h        ; Bij P0 dient enkel poort 4 aan te staan als uitvoer voor het toestenbord.
+    mov P0MDOUT, #00010000b        ; Bij P0 dient enkel poort 4 aan te staan als uitvoer voor het toestenbord.
     mov P1MDOUT, #0FFh
     mov P2MDOUT, #0FFh
     mov P3MDOUT, #0FFh
