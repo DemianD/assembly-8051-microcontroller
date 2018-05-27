@@ -114,7 +114,7 @@ ISR_INT1:
     clr EX1     ; Interrupts ontvangen van EX1 stopzetten
     RETI
 
-timer:  
+ISR_TIMER:  
     ; Not sure of dit nodig is.
     ; clr TF0
 
