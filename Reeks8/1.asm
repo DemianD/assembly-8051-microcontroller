@@ -45,9 +45,9 @@ main:
     mov SP, #07h
 
     ; Stack overzicht 
-    ; 02H        < SP
+    ; 02H        
     ; 01H        
-    ; 07H
+    ; 07H       < SP
 
     jmp $
 
