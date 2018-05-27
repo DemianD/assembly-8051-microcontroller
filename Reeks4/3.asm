@@ -32,12 +32,13 @@ main:
     mov SFRPAGE, #0Fh
     mov XBR2, #40h
 
-    ; P0.0 = interrupt lijn 0
-    ; P0.1 = interrupt lijn 1
-    mov XBR1, #10100
+    ; P0.0 = interrupt lijn 0 -> XBR1.2
+    ; P0.1 = interrupt lijn 1 -> XBR1.4
+    ; Timer0 -> XBR1.1
+    mov XBR1, #00000111b        
 
     ; Interrupts enabelen voor deze interrupt lijnen
-    mov P0MDOUT, #10h        ; Bij P0 dient enkel poort 4 aan te staan als uitvoer voor het toestenbord.
+    mov P0MDOUT, #00010000h        ; Bij P0 dient enkel poort 4 aan te staan als uitvoer voor het toestenbord.
     mov P1MDOUT, #0FFh
     mov P2MDOUT, #0FFh
     mov P3MDOUT, #0FFh
