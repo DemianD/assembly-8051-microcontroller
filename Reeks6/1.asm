@@ -10,13 +10,10 @@
 ; Differentiaal is beter. Waarom?
 ; Als er ruis optreedt zullen beide signalen verstoord raken op ongeveer dezelfde plaats. 
 ; Aangezien het verschil genomen wordt tussen de twee zal de fout weggewerkt worden.
+; Maar wij zullen toch Single-ended gebruiken :)
 
 ; AMX0SL: om de channel te selecteren.
 ; AMX0CF: configuratie register
-
-; When the ADC0 input configuration is changed a minimum tracking time is required 
-; before an accurate conversion can be performed. ~ 200ms
-
 
 $include(8051f120.inc)
 
@@ -119,7 +116,7 @@ start:
     ; Vb. 565H digitale waarde naar temp: 15,13
 
     ; Plaats dit eens in een interval:
-    ; [14,93..., 15,13[	-> 564	(een verschil van ongeveer 0,2 (15,13-14,93))
+    ; [14,93, 15,13[	-> 564	(een verschil van ongeveer 0,2 (15,13-14,93))
 
     ; Na conversie vinden we de minst significante 8 bits in het register ADC0L
     ; 15 is onze basistemperatuur.
@@ -128,7 +125,7 @@ start:
     ; Laten we stellen dat ADC0 = 566 (nog zonder rekening te houden met low bytes of high bytes)
     ; Dan zouden we verwachten dat de temperatuur 15,33 is (14,93 + (ADC0 - 564) *0,2)
 
-    ; We kunnen geen komma getallen gebruiken:
+    ; We kunnen geen komma getallen gebruiken, dus ronden we 14,93 af naar 15.
     ; (15,00 + (ADCL - 564) * 0,2)
 
     ; 564 is groter dan een 8 bit getal.
