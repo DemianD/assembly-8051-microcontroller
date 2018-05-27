@@ -19,11 +19,8 @@ main:
     ; Alle pinnen voor P1 zijn uitvoer pinnen
     mov P1MDOUT, #0FFH
 
-    ; Alle ledjes uitzetten
-    mov P1, #0FFH
-
     ; Het meest links ledje aanzetten
-    setb P1.7
+    mov P1, #80H
 
 start:
 

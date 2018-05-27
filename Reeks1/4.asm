@@ -27,10 +27,6 @@ main:
     ; Een telregister bijhouden
     mov R2, #0h
 
-    ; Registers die dienen voor de loop
-    mov R3, #255d
-    mov R4, #255d
-
 start:
     ; Wachten tot knop wordt ingedrukt (Volgens mij moeten deze comments omgekeerd zijn)
     jb P3.7, $

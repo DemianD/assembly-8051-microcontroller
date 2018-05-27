@@ -21,11 +21,7 @@ main:
     mov P3MDOUT, #0H   ; Alles van Pin 3 is invoer, dit moet niet expliciet want standaard is het invoer
 
     ; Alle ledjes uitzetten
-    mov P1, #0FFH
-
-    ; Minstens 1 ledje aan
-    mov A, #10000000b
-
+    mov P1, #80H
 
 start:
     mov P1, A

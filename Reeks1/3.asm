@@ -24,7 +24,6 @@ main:
     mov P3MDOUT, #0h 
 
     clr P1.6
-    clr P3.7
 
 start:
     ; Standaard staat de invoer op 1. Als deze op 1 staat, dan moeten we niets doen (wachten)
