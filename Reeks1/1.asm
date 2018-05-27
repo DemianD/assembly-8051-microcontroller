@@ -43,11 +43,12 @@ main:
 
     ; GPIO-poort configureren als output pin doe je met het PxMDOUT
     ; 1. Zit ik in de juiste SFR-page? (Aflezen op pagina 229)
-    ; 2. Pin 6 moet uitvoerbaar zijn: 0010 0000
+    ; 2. Pin 6 moet uitvoerbaar zijn: 0100 0000
     mov P1MDOUT, #01000000b
 
     ; Led aanzetten
-    ; Opgelet, poort 1 bit-addressable, maar p1mdout niet
+    ; Opgelet, poort 1 bit-addressable, maar P1MDOUT niet
+    ; P1 is ook aanwezig op alle SFR-pages. (Pagina 228)
     setb P1.6
 
     ; Ik heb geen idee of dit mag.

@@ -20,7 +20,7 @@ main:
 
     mov P1MDOUT, #01000000b
 
-    ; Dit is strikt niet noodzakelijk, want standaard is alles invoer
+    ; Dit is strikt gezien niet noodzakelijk, want standaard is alles invoer
     mov P3MDOUT, #0h 
 
     clr P1.6
