@@ -27,20 +27,13 @@ main:
     clr P3.7
 
 start:
-    ; Eerste keer is dit false; P3.7 is leeg als niemand erop klikt
-    ; jb = jump if bit set. Hij zal dus niet jumpen en verder gaan met de volgende instructie
+    ; Standaard staat de invoer op 1. Als deze op 1 staat, dan moeten we niets doen (wachten)
     jb P3.7, $  
 
-    ; We gaan nu het lichtje aanzetten (want initieel stond het op 0)
+    ; De gebruiker heeft de knop ingedrukt.
     cpl P1.6    
 
-    ; jnb = jump if bit is not set. 
-    ; Maar niemand hoe de schakelaar ingedrukt, dus dit komt in een oneindige lus.
-    ; Wanneer we op de schakelaar klikken, gaat hij terug naar start
-	jnb P3.7,$  
-	jmp start
+    ; Nu gaan we wachten tot de gebruiker terug loslaat
+	jnb P3.7, $  
 
-; Verwacht:
-; Bij opstarten zal het ledje branden
-; Wanneer je de eerste keer klikt, en je blijft klikken gebeurt er niets tot je loslaat.
- 
+	jmp start

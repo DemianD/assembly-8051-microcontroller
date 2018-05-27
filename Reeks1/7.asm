@@ -30,8 +30,8 @@ main:
 start:
     mov P1, A
 
-    ; Wanneer dit bit is ingedrukt, dan gaan we de Carry gaan toggelen
-    jb P3.7, toggle
+    ; Wanneer de drukknop is ingedrukt (waarde 0), dan gaan we de Carry gaan toggelen
+    jnb P3.7, toggle
 
     jb C, links ; Als de carry aanstaat, dan gaan we naar links roteren
 

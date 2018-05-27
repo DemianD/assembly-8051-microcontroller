@@ -1,4 +1,4 @@
-import { printStack, printMemory, push, mov, SP, dec, jnz, pop, ret, callable, call, inc, mul } from "../modules/index";
+import { printStack, printMemory, push, mov, SP, dec, jnz, pop, ret, callable, call, inc, mul } from "./index";
 
 callable.fac = () => {
   push("00H");
@@ -44,10 +44,14 @@ callable.rec = () => {
   ret();
 };
 
+  printStack();
+  printMemory();
+
 mov("R0", 3);
 push("00H");
+printStack();
+
 call("fac");
+printStack();
 
-
-  printStack();
   printMemory();
