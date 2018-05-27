@@ -149,8 +149,9 @@ start:
     div AB                  ; A = 0, B = 2
 
     ; Euclidische deling;
-    ; Uw rest ga je ook nog eens delen. 
-    ; Wat het hier makkelijk maakt: delen door 2 van komma getallen, is gelijk aan rotate left.
+    ; Onze rest = 2. We doen dit eens maal 10.
+    ; Dan delen we dit terug door 5. (20/5 => 4) 
+    ; Maar maal 10 / 5 is hetzelfde als maal 2, dat op te lossen valt met een bit shifting naar links
     push Acc
     mov A, B                ; A = 2H
     rl A                    ; A = 4H
