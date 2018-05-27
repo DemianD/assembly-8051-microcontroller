@@ -10,6 +10,9 @@
 ; minstsignificante bit. Er wordt dus begonnen bij het minstsignificante bit van 20H en gestopt bij
 ; het meestsignificante bit van adres 30H. 
 
+; B = CRC-Register
+; A = Een volgende byte die je bit per bit in het CRC-register zal plaatsen.
+
 cseg at 0000H
     jmp main
 
