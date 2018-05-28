@@ -63,20 +63,20 @@ ISR_TIMER0:
     ; Timer stoppen, opnieuw initialiseren, en starten.
     clr TR0
     mov TL0, #06h
-    mov TH0, #C6h
+    mov TH0, #0C6h
     setb TR0
 
     ; Als de Carry aan staat, hoge pieptoon
     cpl C
     jc hoog
 
-    mov TL1, #D5h
-    mov TH1, #D5h
+    mov TL1, #0D5h
+    mov TH1, #0D5h
     reti
 
 hoog:
-    mov TL1, #ABh
-    mov TH1, #ABh
+    mov TL1, #0ABh
+    mov TH1, #0ABh
 
     reti
 

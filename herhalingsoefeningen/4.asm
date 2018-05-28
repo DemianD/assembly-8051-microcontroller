@@ -48,11 +48,11 @@ main:
 
     ; Startwaardes
     mov TMR2L, #05h
-    mov TMR2H, #FAh
+    mov TMR2H, #0FAh
 
     ; Auto reload value
     mov RCAP2L, #05h
-    mov RCAP2H, #FAh
+    mov RCAP2H, #0FAh
 
     setb TR2
 
