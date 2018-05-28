@@ -104,7 +104,7 @@ ISR_TIMER2:
     cpl C
     jc hoog
 
-    mov RCAP3H, #0FEh
+    mov RCAP3H, #0FCh
     mov RCAP3L, #03h
 
     mov SFRPAGE, #00h
