@@ -89,11 +89,24 @@ verm:
     ; 01H       
     ; 07H
 
+
+    push Acc
+
+    ; Stack overzicht
+    ; Acc        < SP 
+    ; 00H        
+    ; PC         
+    ;            
+    ; 02H        < R0
+    ; 01H       
+    ; 07H
+
     mov A, @R0  
     dec R0
 
     ; Stack overzicht
-    ; 00H        < SP 
+    ; Acc        < SP 
+    ; 00H         
     ; PC         
     ;            
     ; 02H        
@@ -104,13 +117,15 @@ verm:
 
     mul AB
 
-    ; 00H        < SP 
+    ; Acc        < SP 
+    ; 00H        
     ; PC         
     ;            
     ; 02H        
     ; 01H        < R0
     ; 07H
 
+    pop Acc     ; De oorsprongkelijke waarde terug in A steken
     pop 00H     ; De oorsprongkelijke waarde terug in R0 steken
 
     ; PC         < SP 
