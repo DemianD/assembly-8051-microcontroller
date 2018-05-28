@@ -65,4 +65,3 @@ ISR_TIMER2:
     cpl P1.7
 
     reti
-

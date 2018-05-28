@@ -107,21 +107,22 @@ ISR_TIMER2:
     mov RCAP3H, #0FCh
     mov RCAP3L, #03h
 
-    mov SFRPAGE, #00h
+    ; Upon execution of the RETI instruction, the SFR page is automatically
+    ; restored to the SFR Page in use prior to the interrupt.
     reti
     
 hoog:
     mov RCAP3H, #0FEh
     mov RCAP3L, #02h
 
-    mov SFRPAGE, #00h
     reti
 
 ISR_TIMER3
     ; Overflow flag not cleared by hardware
-    mov SFRPAGE, #01h
+    ; waarom niet wisselen van SFRPAGE? Wanneer interrupt optreedt van ISR_TR3,
+	; dan gaat hij automatisch terug naar de bron die het veroorzaakt heeft,
+	; dus dat is meteen de correcte.
     clr TF3
 
     cpl P1.7
-    mov SFRPAGE, #00h
     reti
