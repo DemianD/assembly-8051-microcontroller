@@ -100,7 +100,7 @@ verm:
     ; 01H        < R0
     ; 07H
 
-    mov B, @R1  
+    mov B, @R0  
 
     mul AB
 
