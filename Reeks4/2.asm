@@ -68,7 +68,6 @@ lus:
 	djnz R4, $
 	djnz R3, lus
 
-    ; Dit weet ik nog niet zo goed.
     ; Jump if bit is not set
 	jnb P0.0, ISR_INT1
 	
