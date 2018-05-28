@@ -88,6 +88,8 @@ ISR_TIMER1:
     reti
 
 ISR_ET0:
+    ; TODO: Wachten tot losgelaten wordt? Met een dubbele lus?
+
     clr EX0     ; External Interrupt 0 uitzetten
     setb EX1    ; External Interrupt 1 aanzetten
 
@@ -98,6 +100,8 @@ ISR_ET0:
     reti
 
 ISR_ET1:
+    ; TODO: Wachten tot losgelaten wordt? Met een dubbele lus?
+
     clr EX1    ; External Interrupt 1 uitzetten
     setb EX0     ; External Interrupt 0 aanzetten
 
