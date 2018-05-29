@@ -33,6 +33,6 @@ start:
     cpl P1.6    
 
     ; Nu gaan we wachten tot de gebruiker terug loslaat
-	jnb P3.7, $  
+    jnb P3.7, $  
 
-	jmp start
+    jmp start

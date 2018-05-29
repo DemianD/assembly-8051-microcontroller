@@ -97,7 +97,7 @@ start:
 
     ; Step 4. Process ADC0 data.
 
-	; Vref = 2,43       ; Pagina 108
+    ; Vref = 2,43       ; Pagina 108
 
     ; Vtemp = digitale waarde / 4096 * Vref  ; Geen idee hoe ze hieraan komen
     ; temp = (Vtemp - O,776) / 0.00286       ; Formule van Pagina 50 omgevormt
@@ -116,7 +116,7 @@ start:
     ; Vb. 565H digitale waarde naar temp: 15,13
 
     ; Plaats dit eens in een interval:
-    ; [14,93, 15,13[	-> 564	(een verschil van ongeveer 0,2 (15,13-14,93))
+    ; [14,93, 15,13[    -> 564    (een verschil van ongeveer 0,2 (15,13-14,93))
 
     ; Na conversie vinden we de minst significante 8 bits in het register ADC0L
     ; 15 is onze basistemperatuur.
@@ -166,19 +166,19 @@ start:
     mov R4, A   ;   R4 = tientallen
 
 uitschrijven:
-	mov A, #20H
-	add A, R4	
-	mov R0,    	
-	mov P0, @R0	
+    mov A, #20H
+    add A, R4    
+    mov R0,        
+    mov P0, @R0    
 
-	mov A, #20H
-	add A, R5
-	mov R0, A	
-	mov P1, @R0
+    mov A, #20H
+    add A, R5
+    mov R0, A    
+    mov P1, @R0
 
-	mov A, #20H
-	add A, R6
-	mov R0, A	
-	mov P2, @R0
+    mov A, #20H
+    add A, R6
+    mov R0, A    
+    mov P2, @R0
 
-	jmp start
+    jmp start

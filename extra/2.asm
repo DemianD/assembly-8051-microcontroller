@@ -1,16 +1,16 @@
 ; C-Programma
 
-;	void geefLaatste(int *tab, int n, int *l){
-;	   *l = tab[n-1];
-;	}
+;    void geefLaatste(int *tab, int n, int *l){
+;       *l = tab[n-1];
+;    }
 ;
-;	int main(){
-;	   int t[] = {1,2,3}; //30H
-;	   int laatste; //40H
-;	   geefLaatste(t,3,&laatste);
-;	   while(1);
-;	   return 0;
-;	}
+;    int main(){
+;       int t[] = {1,2,3}; //30H
+;       int laatste; //40H
+;       geefLaatste(t,3,&laatste);
+;       while(1);
+;       return 0;
+;    }
 
 cseg at 0000H
     jmp main
@@ -18,10 +18,10 @@ cseg at 0000H
 cseg at 0050H
 
 main:
-	clr EA
-	mov WDTCN, #0DEH
-	mov WDTCN, #0ADH
-	setb EA
+    clr EA
+    mov WDTCN, #0DEH
+    mov WDTCN, #0ADH
+    setb EA
 
     mov 30H, #1d
     mov 31H, #2d

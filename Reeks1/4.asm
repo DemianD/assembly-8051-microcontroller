@@ -28,10 +28,10 @@ main:
     mov R2, #0h
 
 start:
-    ; Wachten tot knop wordt ingedrukt (Volgens mij moeten deze comments omgekeerd zijn)
+    ; Wachten tot knop wordt ingedrukt
     jb P3.7, $
 
-    ; Wachten tot knop wordt losgelaten (Volgens mij moeten deze comments omgekeerd zijn)
+    ; Wachten tot knop wordt losgelaten
     jnb P3.7, $
 
     ; We komen hier als er wel iemand op de schakelaar heeft geklikt.
@@ -47,9 +47,9 @@ loop1:
 
 loop2:
     mov R4, #255d
-	
+    
     djnz R4, $      ; Wachten tot de binnenste loop op 0 staat
-	djnz R3, loop2  ; Daarna gaan we terug naar loop 2, dit doen we 255 keer
+    djnz R3, loop2  ; Daarna gaan we terug naar loop 2, dit doen we 255 keer
 
     ; Als we hier komen is de vertragingslus gepasseerd.
     ; Nu toggelen we het lichtje
@@ -59,7 +59,3 @@ loop2:
 
     ; A zal nu op 0 staan. Dit betekent dat we terug kunnen naar start omdat we X keer geflikkerd hebben.
     jmp start
-
-; Verwacht:
-; - Bij opstarten zal hij meteen vastzitten bij regel 39
-; - Als we daarna klikken, en blijven inhouden zal het flikkeren wel gebeuren en zullen we belanden bij lijn 36

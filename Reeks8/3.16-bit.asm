@@ -22,22 +22,22 @@ main:
     ; Met 16 bit vermenigvuldiging:
     ; 16*16 bit = 32bit
     ; Ofwel 4 bytes nodig voor het resultaat.
-	mov 30H, #00H   ; LSB
-	mov 31H, #00H   ;
-	mov 32H, #00H   ;
-	mov 33H, #00H   ; MSB
+    mov 30H, #00H   ; LSB
+    mov 31H, #00H   ;
+    mov 32H, #00H   ;
+    mov 33H, #00H   ; MSB
 
     ; Multiplier (2 bytes) 
-	mov 34H, #251d  ; LSB
-	mov 35H, #251d  ; MSB
+    mov 34H, #251d  ; LSB
+    mov 35H, #251d  ; MSB
 
     ; Multiplicator (2 bytes)
-	mov 36H, #254d  ; LSB
-	mov 37H, #254d  ; MSB
+    mov 36H, #254d  ; LSB
+    mov 37H, #254d  ; MSB
 
     ; Extra registers voor op te schuiven (om dan op te tellen)
-	mov 38H, #00h   ; LSB
-	mov 39H, #00h   ; MSB
+    mov 38H, #00h   ; LSB
+    mov 39H, #00h   ; MSB
 
     ;  35H 34H      (multiplier)
     ;  37H 36H      (Multiplicator)
@@ -109,9 +109,9 @@ verder:
     jnz verm
 
     ; Als je hier komt, is het berekent, en zit het resultaat in volgende adressen:
-	; 30H  LSB
-	; 31H 
-	; 32H 
-	; 33H  MSB
+    ; 30H  LSB
+    ; 31H 
+    ; 32H 
+    ; 33H  MSB
 
    ret

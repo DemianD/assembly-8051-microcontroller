@@ -65,47 +65,89 @@ start:
 
 _0:
     ;toon een 0
-    jmp start
+    jmp wacht_0
 _1:
     ;toon een 1
-    jmp start
+    jmp wacht_0
 _2:
+    ;toon een 2
+    jmp wacht_0
+_3:
     ;toon een 3
-    jmp start
+    jmp wacht_0
 _4:
     ;toon een 4
-    jmp start
+    jmp wacht_1
 _5:
     ;toon een 6
-    jmp start
+    jmp wacht_1
 _6:
     ;toon een 6
-    jmp start
+    jmp wacht_1
 _7:
     ;toon een 7
-    jmp start
+    jmp wacht_1
 _8:
-    jmp start
     ;toon een 8
+    jmp wacht_2
 _9:
     ;toon een 9
-    jmp start
+    jmp wacht_2
 _A:
     ;toon een A
-    jmp start
+    jmp wacht_2
 _B:
     ;toon een B
-    jmp start
+    jmp wacht_2
 _C:
     ;toon een C
-    jmp start
+    jmp wacht_3
 _D:
     ;toon een D
-    jmp start
+    jmp wacht_3
 _E:
     ;toon een E
-    jmp start
+    jmp wacht_3
 _F:
     ;toon een F
+    jmp wacht_3
+
+wacht_0:
+    mov R3, #255d
+loop_0:
+    mov R4, #255d
+    djnz R4, $
+    djnz R3, loop_0
+
+    jnb P0.0, wacht_0
     jmp start
 
+wacht_1:
+    mov R3, #255d
+loop_1:
+    mov R4, #255d
+    djnz R4, $
+    djnz R3, loop_1
+
+    jnb P0.1, wacht_1
+    jmp start
+
+wacht_2:
+    mov R3, #255d
+loop_2:
+    mov R4, #255d
+    djnz R4, $
+    djnz R3, loop_2
+
+    jnb P0.2, wacht_2
+    jmp start
+
+wacht_3:
+    mov R3, #255d
+loop_3:
+    mov R4, #255d
+    djnz R4, $
+    djnz R3, loop_3
+
+    jnb P0.3, wacht_3
+    jmp start

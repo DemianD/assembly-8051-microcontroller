@@ -51,11 +51,11 @@ main:
     mov 22h, #1011011b ; Bitpatroon voor 2
     mov 23h, #1001111b ; Bitpatroon voor 3
     mov 24H, #1100110b ; bitpatroon voor 4
-	mov 25H, #1101101b ; bitpatroon voor 5
-	mov 26H, #1111101b ; bitpatroon voor 6
-	mov 27H, #0000111b ; bitpatroon voor 7	
+    mov 25H, #1101101b ; bitpatroon voor 5
+    mov 26H, #1111101b ; bitpatroon voor 6
+    mov 27H, #0000111b ; bitpatroon voor 7    
     mov 28H, #1111111b ; bitpatroon voor 8
-	mov 29H, #1101111b ; bitpatroon voor 9
+    mov 29H, #1101111b ; bitpatroon voor 9
 
     ; Vier telregisters bijhouden
     mov R2, #0h ; Voor de meest linkse

@@ -120,8 +120,8 @@ hoog:
 ISR_TIMER3
     ; Overflow flag not cleared by hardware
     ; waarom niet wisselen van SFRPAGE? Wanneer interrupt optreedt van ISR_TR3,
-	; dan gaat hij automatisch terug naar de bron die het veroorzaakt heeft,
-	; dus dat is meteen de correcte.
+    ; dan gaat hij automatisch terug naar de bron die het veroorzaakt heeft,
+    ; dus dat is meteen de correcte.
     clr TF3
 
     cpl P1.7

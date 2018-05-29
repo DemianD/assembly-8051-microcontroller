@@ -59,23 +59,23 @@ main:
 ISR_INT1:
     ; Code op lijn 62 is niet goed, doordat het toestenbord niet ontwikkeld is voor interrupts. 
     ; We moeten er meer tijd tussen steken.
-	; jnb P0.0, $ 
+    ; jnb P0.0, $ 
 
-	; wat meer tijd 
-	mov R3, #255d
+    ; wat meer tijd 
+    mov R3, #255d
 lus:
-	mov R4, #255d
-	djnz R4, $
-	djnz R3, lus
+    mov R4, #255d
+    djnz R4, $
+    djnz R3, lus
 
     ; Jump if bit is not set
-	jnb P0.0, ISR_INT1
-	
+    jnb P0.0, ISR_INT1
+    
     ; Bij 10 tellen pas het lichtje doen branden.
-	inc R2
-	cjne R2, #10d, einde
-	cpl P1.6
-	mov R2, #00d
+    inc R2
+    cjne R2, #10d, einde
+    cpl P1.6
+    mov R2, #00d
 
 einde: 
     reti
